@@ -1,6 +1,6 @@
-package com.modiranedaneshmehvar.springbootproject.readinglist.repositories;
+package com.nasrinsohrabi.springbootproject.readinglist.repositories;
 
-import com.modiranedaneshmehvar.springbootproject.readinglist.entities.Reader;
+import com.nasrinsohrabi.springbootproject.readinglist.entities.Reader;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

@@ -1,4 +1,4 @@
-package com.modiranedaneshmehvar.springbootproject.readinglist.entities;
+package com.nasrinsohrabi.springbootproject.readinglist.entities;
 
 /**
  * Created by Nasrin on 7/07/2017.

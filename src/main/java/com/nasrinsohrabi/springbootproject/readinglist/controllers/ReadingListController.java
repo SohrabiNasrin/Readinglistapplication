@@ -1,7 +1,7 @@
-package com.modiranedaneshmehvar.springbootproject.readinglist.controllers;
+package com.nasrinsohrabi.springbootproject.readinglist.controllers;
 
-import com.modiranedaneshmehvar.springbootproject.readinglist.entities.Book;
-import com.modiranedaneshmehvar.springbootproject.readinglist.repositories.ReadingListRepository;
+import com.nasrinsohrabi.springbootproject.readinglist.entities.Book;
+import com.nasrinsohrabi.springbootproject.readinglist.repositories.ReadingListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

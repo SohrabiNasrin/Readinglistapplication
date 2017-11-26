@@ -1,4 +1,4 @@
-package com.modiranedaneshmehvar.springbootproject.readinglist.entities;
+package com.nasrinsohrabi.springbootproject.readinglist.entities;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

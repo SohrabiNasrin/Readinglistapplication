@@ -1,6 +1,6 @@
-package com.modiranedaneshmehvar.springbootproject.readinglist.securities;
+package com.nasrinsohrabi.springbootproject.readinglist.securities;
 
-import com.modiranedaneshmehvar.springbootproject.readinglist.repositories.ReaderRepository;
+import com.nasrinsohrabi.springbootproject.readinglist.repositories.ReaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;

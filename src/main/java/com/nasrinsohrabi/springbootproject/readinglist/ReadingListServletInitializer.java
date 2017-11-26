@@ -1,4 +1,4 @@
-package com.modiranedaneshmehvar.springbootproject.readinglist;
+package com.nasrinsohrabi.springbootproject.readinglist;
 
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
