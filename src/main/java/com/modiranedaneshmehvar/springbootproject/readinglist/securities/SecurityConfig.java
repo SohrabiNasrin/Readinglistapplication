@@ -1,5 +1,6 @@
-package com.modiranedaneshmehvar.springbootproject.readinglist;
+package com.modiranedaneshmehvar.springbootproject.readinglist.securities;
 
+import com.modiranedaneshmehvar.springbootproject.readinglist.repositories.ReaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -26,7 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception{
        http.
             authorizeRequests()
-               .antMatchers("/").access("hasRole ('READER')")
+               .antMatchers("/").access
+               ("hasRole ('READER')")
                .antMatchers("/**").permitAll()
                .and()
 

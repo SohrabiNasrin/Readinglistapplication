@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
 <head>
     <title>Oops!</title>
-    <link rel="stylesheet" th:href="@{/style.css}"> </link>
+    <link rel="stylesheet"
+          href="../static/style.css "
+          th:href="@{/style.css}"> </link>
 </head>
 <body>
     <div class="errorPage">
         <span class="oops">Oops!</span><br/>
-        <img th:src="@{/MissingPage.png}"> </img>
+        <img src="../static/images/MissingPage.png"  th:src="@{/images/MissingPage.png}"> </img>
         <p>There Seem to be a problem with the page you requested</p>
         <p th:text="${'Details: ' + message}"></p>
     </div>

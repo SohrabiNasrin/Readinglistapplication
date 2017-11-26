@@ -1,4 +1,4 @@
-package com.modiranedaneshmehvar.springbootproject.readinglist;
+package com.modiranedaneshmehvar.springbootproject.readinglist.entities;
 
 /**
  * Created by Nasrin on 7/07/2017.
@@ -17,9 +17,9 @@ import javax.persistence.Id;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String reader;
     private String isbn;
     private String title;
@@ -46,10 +46,10 @@ public class Book {
 
     // isbn methods
 
-    public String getisbn() {
+    public String getIsbn() {
         return isbn;
     }
-    public void setisbn(String isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
@@ -70,7 +70,7 @@ public class Book {
     }
 
     // description methods
-    public String getDescroption() {
+    public String getDescription() {
         return description;
     }
     public void setDescription(String description) {

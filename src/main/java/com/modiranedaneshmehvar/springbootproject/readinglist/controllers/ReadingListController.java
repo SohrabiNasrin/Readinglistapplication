@@ -1,5 +1,7 @@
-package com.modiranedaneshmehvar.springbootproject.readinglist;
+package com.modiranedaneshmehvar.springbootproject.readinglist.controllers;
 
+import com.modiranedaneshmehvar.springbootproject.readinglist.entities.Book;
+import com.modiranedaneshmehvar.springbootproject.readinglist.repositories.ReadingListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,7 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/List")
 
 public class ReadingListController {
 
@@ -31,17 +33,19 @@ public class ReadingListController {
     public String readerBooks(
         @PathVariable("reader") String reader, Model model) {
             List<Book> readingList = readingListRepository.findByReader(reader);
-            if (readingList != null){
+          if (readingList != null){
                 model.addAttribute("books" , readingList);
         }
-        return "readingList";
+         return "readingList";
     }
 
     @RequestMapping(value="/{reader}" , method = RequestMethod.POST)
     public String addToReadingList(@PathVariable("reader") String reader , Book book){
         book.setReader(reader);
+        System.out.println(" Reader has been set .." + book.getReader()
+                + " Reader Id : " + book.getId() );
         readingListRepository.save(book);
 
-        return "redirect: / {reader}";
+        return "redirect:/List/{reader}";
     }
 }
