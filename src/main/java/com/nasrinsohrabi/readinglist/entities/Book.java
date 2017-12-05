@@ -1,24 +1,26 @@
-package com.nasrinsohrabi.springbootproject.readinglist.entities;
+package com.nasrinsohrabi.readinglist.entities;
 
 /**
  * Created by Nasrin on 7/07/2017.
  */
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Nasrin on 7/07/2017.
  */
 
 @Entity
+@Table (name = "book")
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+   // @ManyToOne
+  //  private Reader readerentity;
+    private Long   userid;
 
     private String reader;
     private String isbn;
@@ -27,7 +29,23 @@ public class Book {
     private String description;
 
 
-    //Id methods
+
+  /************Constructors*********************/
+
+   public Book(Reader readerentity, String reader){
+        this.reader = reader;
+       // this.readerentity = readerentity;
+    }
+
+   Book(){}
+
+    /**************** methods*****************/
+
+  //  public Reader getReaderentity() {return readerentity;}
+
+
+    public Long getUserid(){return userid;}
+    public void setUserid(Long userId) {this.userid = userid;}
 
     public Long getId() {
         return id;
@@ -36,7 +54,7 @@ public class Book {
         this.id = id;
     }
 
-    // Reader methods
+
     public String getReader() {
         return reader;
     }
@@ -44,7 +62,7 @@ public class Book {
         this.reader = reader;
     }
 
-    // isbn methods
+
 
     public String getIsbn() {
         return isbn;
@@ -53,7 +71,6 @@ public class Book {
         this.isbn = isbn;
     }
 
-    // title method
     public String getTitle() {
         return title;
     }
@@ -61,7 +78,7 @@ public class Book {
         this.title = title;
     }
 
-    // author methods
+
     public String getAuthor() {
         return author;
     }
@@ -69,7 +86,7 @@ public class Book {
         this.author = author;
     }
 
-    // description methods
+
     public String getDescription() {
         return description;
     }

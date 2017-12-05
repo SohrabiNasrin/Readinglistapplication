@@ -1,4 +1,4 @@
-package com.nasrinsohrabi.springbootproject.readinglist;
+package com.nasrinsohrabi.readinglist;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
