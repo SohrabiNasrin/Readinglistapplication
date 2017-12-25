@@ -39,6 +39,7 @@ public class ReadingListRestController {
           return readingListRepository.findByReader(reader).stream()
                  .filter(book -> book.getDescription().trim().equalsIgnoreCase(description.trim()))
                  .collect(Collectors.toList());
+
     }
 
     @RequestMapping (method = RequestMethod.POST)
