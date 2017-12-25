@@ -1,0 +1,12 @@
+ #// Using filesystem as backeend configuration service
+  spring:
+   application:
+     name: readinglistservice
+   profiles:
+      active:
+        default
+   cloud:
+    config:
+      uri: http://localhost:8888
+    #// enabled: true
+

@@ -1,0 +1,26 @@
+body{
+    font-size: 10pt;
+    font-family: arial, helvetica, sams-safari;
+    color: #c7c6ff;
+    background-image: url("../images/Library-Solutions.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.errorPage{
+    font-size: 14pt;
+
+}
+.bookHeadLine {
+    font-siz: 12pt;
+    font-weight: bold;
+    background-color: rgb(192, 192, 192);
+    color: rgb(18, 39, 125);
+
+}
+
+.bookDescription {
+    font-size: 10pt;
+}
+label {
+    font-weight: bold;
+}
