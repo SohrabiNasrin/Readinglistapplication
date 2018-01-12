@@ -12,11 +12,11 @@ public class ReadingListHomePageController {
 
     @RequestMapping("/")
     public String getHomePage(){
-        return "index";
+        return "ReadingListMainPage";
     }
     @RequestMapping("/readingList")
     public String getReadeList(){
-        return  "redirect:/List";
+        return  "redirect:/home";
     }
 
 

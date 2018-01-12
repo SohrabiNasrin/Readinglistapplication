@@ -1,0 +1,163 @@
+
+html, body{
+	margin-top:  0px;
+	padding-top: 0px;
+	padding-left: 10px ;
+	padding-right: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+   	font-style: arial;
+
+}
+
+.row1{
+  width = 100%; 
+  background-color: #2F4F4F; 
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 20px ;
+  border: 1px groove white;
+  border-width: .5px;
+
+ }
+
+.row2{
+  width = 100%; 
+  background-color: #2F4F4F; 
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 5px ;
+  border: 1px groove white;
+  border-width: .5px;
+} 
+
+.row3{
+  background-color: #DCDCDC;
+  color: #008B8B;
+  font: arial;
+  font-size: 18px;
+  width = 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 10px
+
+}
+
+.headername{
+	font-style: italic;
+	margin-left: 10px;
+	}
+  
+ *{
+   /* -webkit- box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;  
+    box-sizing:  border-box; */
+ }
+
+ a{
+    color: white;
+    text-decoration: none;
+  }
+
+a:hover{
+    color: #800000; 
+}
+.favoritegenres ul{
+	display: none; 
+	margine : 10px;
+	cursor: pointer;
+	list-style-position: inside;
+} 
+
+.menu li:hover .favoritegenres-content{
+	color: #800000;
+	opacity: 1;
+	display: inline;
+
+}
+.menu li{
+	text-decoration-style: none;
+	list-style-type: none;
+	padding-left: 10px;
+}
+.favoritegenres{
+	font-style: Arial;
+    width = 20%;
+    margin-left: 20px;
+    position: relative;
+}
+.newbooks{
+	font-style: Arial;
+    width = 20%;
+    margin-left: 20px;
+}
+
+.mylist{
+	font-style: Arial;
+    width = 20%;
+    margin-left: 20px;
+}
+
+.home{
+	font-style: Arial;
+    width = 8.33%;
+    margin-left: 10px;
+
+}
+.aboutme{
+    font-style: Arial;
+    width = 8.33%;
+    margin-left: 20px;
+}
+
+.signin-registeration{
+	font-style: arial;
+    width = 55%;
+    margin-left: auto;
+   }
+
+.stevejobs{
+	 width: 20%;
+	 overflow: auto;
+	 margin-left: 40px;
+	 font-weight: bold;
+
+	}
+.quotes{
+   width: 20%;
+   overflow: auto;
+   margin-left: 60px;
+   font-weight: bold;
+
+  }
+
+.col-4{
+	width = 33%;
+	margin-left: 20px;
+}
+
+.col-5{
+
+   width = 41.66% ;
+   margin-left: 20px;
+}
+
+.col-6{
+  width = 50% ;
+  margin-left: 20px;
+}
+.col-7{
+  width = 58.33%;
+  margin-left: 20px;
+}
+
+.col-9{
+  width = 75%;
+  margin-left: 20px;
+}

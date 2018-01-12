@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <title>LookupServiceResult</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link  rel="stylesheet" href="../style.css"
+           th:href="@{/style.css}">
+    </link>
+
+</head>
+<body>
+
+<h2>Your Item Search Result</h2>
+<div th:unless="${#lists.isEmpty(books)}">
+    <dl class="bookHeadLine" th:each="books:${books}">
+        <dt>
+            <span th:text="${books.title}">Title</span>
+            <span th:text="${books.description}">Descriptionr</span>
+          </dt>
+        <dd class="bookDescription">
+            <span th:if="${books.description}"
+                  th:text="${books.description}">Description</span>
+            <span th:if="${books.description eq null}">
+                No Description available </span>
+        </dd>
+    </dl>
+</div>
+<div th:if="${#lists.isEmpty(books)}">
+    <p>You have no book in your book list</p>
+</div>
+
+</body>
+</html>

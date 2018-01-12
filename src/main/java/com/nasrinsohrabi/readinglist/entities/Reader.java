@@ -31,7 +31,7 @@ public class Reader implements UserDetails {
     private String firstname;
     private String password;
 
-   /********Constructors***************/
+   /******** Constructors ***************/
 
    public Reader(String username, String lastname){
         this.username = username;
@@ -41,7 +41,7 @@ public class Reader implements UserDetails {
     Reader(){}
 
 
-    /**************** methods*****************/
+    /**************** methods **************/
 
     public Set<Book> getBooks() {return books;}
 

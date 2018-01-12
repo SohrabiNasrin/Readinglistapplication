@@ -20,6 +20,7 @@ public class Book {
 
    // @ManyToOne
   //  private Reader readerentity;
+
     private Long   userid;
 
     private String reader;
@@ -30,7 +31,7 @@ public class Book {
 
 
 
-  /************Constructors*********************/
+    /************ Constructors *******************/
 
    public Book(Reader readerentity, String reader){
         this.reader = reader;
@@ -39,7 +40,7 @@ public class Book {
 
    Book(){}
 
-    /**************** methods*****************/
+    /**************** methods *****************/
 
   //  public Reader getReaderentity() {return readerentity;}
 
