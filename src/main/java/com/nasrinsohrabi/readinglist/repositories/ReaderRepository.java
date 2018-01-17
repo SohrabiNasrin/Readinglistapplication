@@ -11,5 +11,8 @@ import java.util.Optional;
  */
 public interface ReaderRepository extends JpaRepository<Reader, String>{
 
-   Optional<Reader> findByFirstname(String username);
+   Optional<Reader> findByFirstName(String firstName);
+   Reader findByEmail(String email);
+   Reader findByConfirmationToken(String confirmationToken);
+
 }

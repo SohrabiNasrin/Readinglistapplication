@@ -1,5 +1,7 @@
 package com.nasrinsohrabi.readinglist.entities;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +17,7 @@ import java.util.Set;
  */
 @Entity
 
-public class Reader implements UserDetails {
+public class Reader implements  UserDetails{
 
     private static final long serialVersionUID = 1l;
 
@@ -23,19 +25,39 @@ public class Reader implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userid;
 
+    @Column(name = "email", nullable = false , unique = true)
+    @Email(message = "Please provide a valid e-mail ")
+    @NotEmpty(message = "Please provide an E-mail")
+    private String email;
+
     @OneToMany
     private Set<Book> books = new HashSet<>();
 
-    private String username;
-    private String lastname;
-    private String firstname;
+
+    @Column(name = "lastname")
+    @NotEmpty(message = "Please provide your last name")
+    private String lastName;
+
+    @Column(name = "firstname")
+    @NotEmpty(message = "Please provide your fist name")
+    private String firstName;
+
+
+    @Column(name = "confirmationtoken")
+    private String confirmationToken;
+
+    @Column(name = "password")
+    @Transient
     private String password;
+
+
+    private boolean enable;
 
    /******** Constructors ***************/
 
-   public Reader(String username, String lastname){
-        this.username = username;
-        this.lastname = lastname;
+   public Reader(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     Reader(){}
@@ -45,64 +67,76 @@ public class Reader implements UserDetails {
 
     public Set<Book> getBooks() {return books;}
 
+    public void setEnabled(Boolean enable){ this.enable = enable;}
+    public Boolean isEnable(){return this.enable;}
+
     public Long getUserid() {return userid; }
     public void setUserid(Long userId) {
         this.userid = userid;
     }
 
-    public String getUsername(){
-        return username;
+    public String getConfirmationToken(){
+        return confirmationToken;
     }
-    public void setUsername(String username){
-        this.username = username;
-    }
-
-    public String getFirstname(){
-        return username;
-    }
-    public void setFirstname(String username){
-        this.username = username;
+    public void setConfirmationToken(String confirmationToken){
+        this.confirmationToken = confirmationToken;
     }
 
+    public String getEmail(){return email;}
+    public void setEmail(String email){ this.email = email;}
 
-    public String getLastname(){
-        return lastname;
+
+    public String getFirstName(){
+        return firstName;
     }
-    public void setLastname(String lastname){
-        this.lastname = lastname;
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+
+
+    public String getLastName(){
+        return lastName;
+    }
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
     }
 
     public String getPassword(){
         return password;
     }
-    public void setPassword(String password){
-        this.password = password;
-    }
-
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities(){
-        return Arrays.asList(new SimpleGrantedAuthority("READER"));
-
+    public String getUsername() {
+        return null;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return false;
     }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
+
 }

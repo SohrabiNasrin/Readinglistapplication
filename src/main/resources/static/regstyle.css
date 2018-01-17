@@ -1,0 +1,23 @@
+.background{
+
+	background-color: #DCDCDC;
+}
+.alert-success{
+}
+
+
+.alert-danger{
+}
+
+body:not(.fixed-sidebar):not(.canvas-menu).mini-navbar .nav li:hover > .nav-second-level,
+.mini-navbar .nav li:focus > .nav-second-level {
+  display: block;
+  border-radius: 0 2px 2px 0;
+  min-width: 140px;
+  height: auto;
+  size 30%;
+}
+body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
+  font-size: 12px;
+  border-radius: 3px;
+}

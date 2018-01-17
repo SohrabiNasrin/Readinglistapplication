@@ -54,8 +54,8 @@ public class ReadingListRestController {
     }
 
 
-    private void validateUser(String userName) {
-        readerRepository.findByFirstname(userName)
-                 .orElseThrow( () -> new UserNotFoundException(userName) );
+    private void validateUser(String firstName) {
+        readerRepository.findByFirstName(firstName)
+                 .orElseThrow( () -> new UserNotFoundException(firstName) );
          }
 }

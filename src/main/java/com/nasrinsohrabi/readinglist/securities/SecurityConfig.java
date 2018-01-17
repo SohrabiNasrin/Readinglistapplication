@@ -23,9 +23,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    @Autowired
     private ReaderRepository readerRepository;
 
-   @Override
+        @Override
     protected void configure(HttpSecurity http) throws Exception{
-       http.
+
+            http.authorizeRequests()
+                    .antMatchers("/register").permitAll()
+                    .antMatchers("/confirm").permitAll();
+
+
+            http.
             authorizeRequests()
                .antMatchers("/").access
                ("hasRole ('READER')")
@@ -43,8 +49,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
              AuthenticationManagerBuilder auth) throws Exception {
              auth.userDetailsService(new UserDetailsService() {
                  @Override
-                 public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-                     return readerRepository.findOne(username);
+                 public UserDetails loadUserByUsername(String firstName) throws UsernameNotFoundException {
+                     return readerRepository.findOne(firstName);
                  }
              });
      }

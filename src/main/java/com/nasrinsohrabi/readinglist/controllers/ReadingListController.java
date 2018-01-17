@@ -47,7 +47,7 @@ public class ReadingListController {
           if (readingList != null){
                 model.addAttribute("books" , readingList);
         }
-         return "readingList";
+         return "home";
     }
 
     @RequestMapping(value = "itemsearch/{reader}/{description}", method = RequestMethod.GET)
@@ -72,6 +72,6 @@ public class ReadingListController {
                 + " Reader Id : " + book.getId() );
         readingListRepository.save(book);
 
-        return "redirect:/List/{reader}";
+        return "redirect:/home/{reader}";
     }
 }
